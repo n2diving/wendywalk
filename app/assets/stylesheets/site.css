@@ -83,3 +83,15 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 	display: inline;
 	vertical-align: middle;
 }
+
+.map {
+	width: 1000px;
+	height: 1000px;
+	overflow: visible;
+}
+
+#map-canvas {
+	overflow: visible;
+	height: 50%; 
+	width: 50%
+}

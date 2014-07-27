@@ -30,9 +30,13 @@
       </nav>
         <div class="jumbotron">
           <h1>Find a Center</h1>
-          <form>
-          <input type="search" class="location">
-          <button class="find">Find a Clinic</button>
+          <%= form_tag mapresults_path, :method => 'get' do %>
+              <p>
+                <%= text_field_tag :search, params[:search], :class => 'form-control' %>
+                <br>
+                <%= submit_tag "Search", :state => nil, :class => 'btn btn-default' %>
+              </p>
+            <% end %>
       </div>
       <div class="container-fluid">
       <div class="row">

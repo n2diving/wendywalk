@@ -1,5 +1,8 @@
 class MapsController < ApplicationController
 
+  def index
+  end
+
   def home
   end
 

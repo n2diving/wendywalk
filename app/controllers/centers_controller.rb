@@ -13,6 +13,7 @@ class CentersController < ApplicationController
 
   def results
     @center = Center.search(params[:search])
+    @center.each 
   end
 
 end

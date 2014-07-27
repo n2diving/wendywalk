@@ -35,6 +35,16 @@ gem 'forem-bootstrap', github: "radar/forem-bootstrap"
 gem 'forem-redcarpet', github: "radar/forem-redcarpet"
 
 gem 'kaminari', '0.15.1'
+
+
+group :production do
+  gem 'rails_12factor'
+end
+
+group :development, :test do
+  gem 'dotenv-rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

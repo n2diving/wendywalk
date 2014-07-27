@@ -1,25 +1,94 @@
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 50%; width: 50% }
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&sensor=TRUE">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(33.925130, -118.212891),
-          zoom: 5
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"/>
+<!DOCTYPE html lang="en">
+<html>
+<head>
+  <title>Wendy Walk</title>
+  <!-- Bootstrap -->
+  <link href="../assets/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/assets/site.css" rel="stylesheet" media="screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <nav class="navbar-default header" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img src="/assets/logo.gif" />
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="navbar navbar-nav mainmenu">
+            <li><a  href="http://wendywalk.org/about/">About</a></li>
+            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/press/">Press</a></li>
+            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/stories/">Stories</a></li>
+            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/events/">Events</a></li>
+            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/photos/">Photos</a></li>
+            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/videos/">Videos</a></li>
+            <li><a style="color: #FFFFFF;" class="donate" href="http://wendywalk.org/donate/">DONATE</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 map">
+          <h1>Find a center</h1>
+            <form>
+              <input class="location" type="search" name="center" placeholder="California, etc...">
+              <button class="find">Search</button>
+            </form>
+          <div id="map-canvas"></div>
+        </div>
+      </div>
+      <div class="row footer">
+        <div class="col-md-6">
+          <ul class="socialmenu">
+            <li><a href="https://www.facebook.com/TheWendyWalk"><img src="/assets/facebook.gif" /></a></li>
+            <li><a href="http://flickr.com/"><img src="/assets/flickr.gif" /></a></li>
+            <li><a href="https://twitter.com/TheWendyWalk"><img src="/assets/twitter.gif"></a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <p><img src="/assets/shoe.gif" /> &copy; Copyright 2014 Wendy Walk</p>
+        </div>
+      </div>
+    </div>
   </body>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="../assets/bootstrap.min.js"></script>
+
+    <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&sensor=TRUE">
+  </script>
+    <script>
+  var cities = {
+   'Groningen':  [ 53.216723950863425, 6.560211181640625, 7],
+    'San Francisco': [ 34.01131647557699, -118.25599389648437, 5],
+    'New York City': [ 40.7143528, -74.0059731, 3]
+
+ };     
+  
+function initialize() {
+  var myLatlng = new google.maps.LatLng(33.792797,-84.319399);
+  var mapOptions = {
+    zoom: 8,
+    center: myLatlng
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  for (var key in cities) {
+    var data = cities[key];
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng (data[0], data[1]),
+        map: map,
+        title: 'test',
+    });
+}
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  
+  </html>

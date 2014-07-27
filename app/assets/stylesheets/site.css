@@ -49,3 +49,23 @@ a.donate {
 	display: inline;
 	vertical-align: middle;
 }
+
+.map {
+	width: 1000px;
+	height: 1000px;
+	overflow: visible;
+}
+
+#map-canvas {
+	overflow: visible;
+	height: 50%; 
+	width: 50%
+}
+
+html {
+	height: 100%
+}
+
+body {
+	height: 100%; margin: 0; padding: 0
+}

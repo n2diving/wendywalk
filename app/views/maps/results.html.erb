@@ -24,7 +24,7 @@
             <li><a style="color: #FFFFFF;" href="http://wendywalk.org/events/">Events</a></li>
             <li><a style="color: #FFFFFF;" href="http://wendywalk.org/photos/">Photos</a></li>
             <li><a style="color: #FFFFFF;" href="http://wendywalk.org/videos/">Videos</a></li>
-            <li><a style="color: #FFFFFF;" class="donate" href="http://wendywalk.org/donate/">DONATE</a></li>
+            <li><a style="color: #FFFFFF;" class="donate hidden-sm" href="http://wendywalk.org/donate/">DONATE</a></li>
           </ul>
         </div>
       </div>
@@ -33,8 +33,8 @@
           <h1>Find a Center</h1>
               <%= form_tag mapresults_path, :method => 'get' do %>
               <p>
-                <%= text_field_tag :search, params[:search], :class => 'form-control location' %>
-                <%= submit_tag "Search", :state => nil, :class => 'btn btn-default find' %>
+                <%= text_field_tag :search, params[:search], :class => 'form-control location', placeholder: 'Enter city or state...' %>
+                <%= submit_tag "Find a Center", :state => nil, :class => 'btn btn-default find' %>
               </p>
             <% end %>
       </div>

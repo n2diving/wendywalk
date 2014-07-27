@@ -56,7 +56,7 @@
             </address>
               <%=center.info%>
      <!--          <p class="centerLatLong"><%=center.lat%>, <%=center.longit%></p> -->
-          <hr />
+          <hr class="centerDivide" />
         <%end%>
         <%else%>
         <p>No results found</p>
@@ -85,67 +85,62 @@
     src="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&sensor=TRUE">
   </script>
     <script>
-  var cities = {
-    '1': [ 32.276813, -110.943381],
-    '2': [ 34.074943, -118.380349],
-    '3': [ 34.097962, -118.290998],
-    '4': [ 34.129634, -117.970767],
-    '5': [ 34.040214, -118.474556],
-    '6': [ 37.439207, -122.175618],
-    '7': [ 38.554300, -121.452443],
-    '8': [ 34.066082, -118.44184],
-    '9': [ 34.061343, -118.204839],
-    '10': [ 28.064063, -82.421414],
-    '11': [ 29.638744,-82.342135],
-    '12': [ 30.264243, -81.440269],
-    '13': [ 33.792797, -84.319399],
-    '14': [ 33.906634, -84.349415],
-    '15': [ 41.894531, -87.622345],
-    '16': [ 41.659562, -91.548367],
-    '17': [ 38.932677, -94.650888],
-    '18': [ 39.295148, -76.593933],
-    '19': [ 42.337480, -71.108086],
-    '20': [ 42.362639, -71.068202],
-    '21': [ 42.283160, -83.730919],
-    '22': [ 44.022129,-92.466625],
-    '23': [ 44.971819, -93.237421],
-    '24': [ 38.635427, -90.263041],
-    '25': [ 38.929442, -77.01473],
-    '26': [ 43.040895, -88.024887],
-    '27': [ 47.626877, -122.329968],
-    '28': [ 38.987971, -77.099955],
-    '29': [ 40.772565, -111.834343],
-    '30': [ 29.695493, -95.399051],
-    '31': [ 35.155616, -90.045599],
-    '32': [ 36.142100, -86.800678],
-    '33': [ 32.784448, -79.946326],
-    '34': [ 40.455093, -79.942467],
-    '35': [ 39.945639, -75.155753],
-    '36': [ 45.497293, -122.686069],
-    '37': [ 41.081607, -81.500071],
-    '38': [ 39.994994, -83.015179],
-    '39': [ 41.502453, -81.621347],
-    '40': [ 36.004904, -78.936454],
-    '41': [ 42.958341, -78.726264],
-    '42': [ 40.790058, -73.953860],
-    '43': [ 40.762105, -73.957218],
-    '44': [ 40.841097, -73.941197]
- };     
+
+     var centers = [<% @center.each do |center| %> [<%=center.lat%>, <%=center.longit%>, "<%= center.name %>", "<%=center.url%>", null],
+        <%end%>];
+
+ //  var cities = {
+ //    '1': [ 32.276813, -110.943381, "Sierra Leone", "http://whatever"],
+ //    '2': [ 34.074943, -118.380349],
+ //    '3': [ 34.097962, -118.290998],
+ //    '4': [ 34.129634, -117.970767],
+ //    '5': [ 34.040214, -118.474556],
+ //    '6': [ 37.439207, -122.175618],
+ //    '7': [ 38.554300, -121.452443],
+ //    '8': [ 34.066082, -118.44184],
+ //    '9': [ 34.061343, -118.204839],
+ //    '10': [ 28.064063, -82.421414],
+ //    '11': [ 29.638744,-82.342135],
+ //    '12': [ 30.264243, -81.440269],
+ //    '13': [ 33.792797, -84.319399],
+ //    '14': [ 33.906634, -84.349415],
+ //    '15': [ 41.894531, -87.622345],
+ //    '16': [ 41.659562, -91.548367],
+ //    '17': [ 38.932677, -94.650888],
+ //    '18': [ 39.295148, -76.593933],
+ //    '19': [ 42.337480, -71.108086],
+ //    '20': [ 42.362639, -71.068202],
+ //    '21': [ 42.283160, -83.730919],
+ //    '22': [ 44.022129,-92.466625],
+ //    '23': [ 44.971819, -93.237421],
+ //    '24': [ 38.635427, -90.263041],
+ //    '25': [ 38.929442, -77.01473],
+ //    '26': [ 43.040895, -88.024887],
+ //    '27': [ 47.626877, -122.329968],
+ //    '28': [ 38.987971, -77.099955],
+ //    '29': [ 40.772565, -111.834343],
+ //    '30': [ 29.695493, -95.399051],
+ //    '31': [ 35.155616, -90.045599],
+ //    '32': [ 36.142100, -86.800678],
+ //    '33': [ 32.784448, -79.946326],
+ //    '34': [ 40.455093, -79.942467],
+ //    '35': [ 39.945639, -75.155753],
+ //    '36': [ 45.497293, -122.686069],
+ //    '37': [ 41.081607, -81.500071],
+ //    '38': [ 39.994994, -83.015179],
+ //    '39': [ 41.502453, -81.621347],
+ //    '40': [ 36.004904, -78.936454],
+ //    '41': [ 42.958341, -78.726264],
+ //    '42': [ 40.790058, -73.953860],
+ //    '43': [ 40.762105, -73.957218],
+ //    '44': [ 40.841097, -73.941197]
+ // };
 function initialize() {
   var mapOptions = {
-    zoom: 6
+    zoom: 8
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-
- //     var cities = {
- //   'Groningen':  [ 53.216723950863425, 6.560211181640625, 7],
- //    'cali': [37.8,-122.4],
- //    'zoo': [32.7,-117.1],
- //    'New York City': [ 40.7143528, -74.0059731, 3],
- //    'Atlanta': [33.792797,-84.319399]
-
- // }; 
 
   // HTML5 geolocation
   if(navigator.geolocation) {
@@ -153,26 +148,42 @@ function initialize() {
       var pos = new google.maps.LatLng(p.coords.latitude,
        p.coords.longitude);
 
-
-      var infowindow = new google.maps.InfoWindow({
+      var infowindowYAH = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'Current Location.'
+        content: 'You Are Here'
       });
         map.setCenter(pos);
       }, 
-
 
       function() {
         handleNoGeolocation(true);
       });
 
-          for (var key in cities) {
-        var data = cities[key];
+      for (var key in centers) {
+        var data = centers[key];
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng (data[0], data[1]),
+          position: new google.maps.LatLng(data[0], data[1]),
           map: map,
-        });}
+          // content: contentString
+          cityIndex: key,
+        });
+
+        var infowindow = new google.maps.InfoWindow(data[2]);
+
+        google.maps.event.addListener(marker, "mouseover", function(e) {
+            infowindow.setContent(data[2]);
+            infowindow.open(map, centers[key][4]);
+          });
+        google.maps.event.addListener(marker, "mouseout", function() {
+            infowindow.setContent("");
+            infowindow.close();
+          });
+        google.maps.event.addListener(marker, "click", function() {
+            location.assign(data[3]);
+          });
+        data[4] = marker;
+      }
 
 
   } else {
@@ -191,7 +202,7 @@ function handleNoGeolocation(errorFlag) {
   var options = {
     map: map,
     position: new google.maps.LatLng(38.6537065, -90.2477908),
-    content: content
+    content: content,
   };
 
   var infowindow = new google.maps.InfoWindow(options);
@@ -201,6 +212,10 @@ function handleNoGeolocation(errorFlag) {
 
 google.maps.event.addDomListener(window, 'resize', initialize);
 google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(this, 'click', function(event) {
+  console.log(event);
+//  infowindow[this.InfoWindowIndex].open(map,this);
+});
 
 
     </script>

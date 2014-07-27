@@ -1,56 +1,31 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root to: 'maps#home'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get '/centers', to: 'maps#home', as: 'centers'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # get '/results', to: 'maps#mapsresults', as: 'mapresults'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get '/forums', to: 'forums#home', as: 'forums'
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
+
+
+#   Prefix Verb   URI Pattern                Controller#Action
+#       maps GET    /maps(.:format)            maps#index
+#            POST   /maps(.:format)            maps#create
+#    new_map GET    /maps/new(.:format)        maps#new
+#   edit_map GET    /maps/:id/edit(.:format)   maps#edit
+#        map GET    /maps/:id(.:format)        maps#show
+#            PATCH  /maps/:id(.:format)        maps#update
+#            PUT    /maps/:id(.:format)        maps#update
+#            DELETE /maps/:id(.:format)        maps#destroy
+#     forums GET    /forums(.:format)          forums#index
+#            POST   /forums(.:format)          forums#create
+#  new_forum GET    /forums/new(.:format)      forums#new
+# edit_forum GET    /forums/:id/edit(.:format) forums#edit
+#      forum GET    /forums/:id(.:format)      forums#show
+#            PATCH  /forums/:id(.:format)      forums#update
+#            PUT    /forums/:id(.:format)      forums#update
+#            DELETE /forums/:id(.:format)      forums#destroy
+#       root GET    /                          maps#home

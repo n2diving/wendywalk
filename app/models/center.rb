@@ -3,9 +3,9 @@ class Center < ActiveRecord::Base
  def self.search(search)
     if search
       q = "%#{search}%"
-      where('State ILIKE ?',q)
+      where('State || City ILIKE ?',q)
     else
-      scoped
+      nil
     end
   end
 

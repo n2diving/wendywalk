@@ -45,7 +45,8 @@
         </div>
         <div class="col-md-6">
           <h2 class="columnH2">Nearby Centers</h2>
-          <% @centers.each do |center| %> 
+        <% if @center.present? %>
+          <% @center.each do |center| %> 
             <address>   
               <span class="centerName"><a href="<%=center.url%>" target="blank"><%= center.name %></a></span><br>
               <%= center.street%>
@@ -56,7 +57,10 @@
               <%=center.info%>
      <!--          <p class="centerLatLong"><%=center.lat%>, <%=center.longit%></p> -->
           <hr />
-          <% end %>
+        <%end%>
+        <%else%>
+        <p>No results found</p>
+        <%end%>
       </div>
       </div>
       <div class="row footer">

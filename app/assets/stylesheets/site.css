@@ -40,7 +40,7 @@ a.donate {
 .footer {
 	height: 100px;
 	line-height: 100px;
-	background: url(../images/footer-bg.gif);
+	background: url(/assets/footer-bg.gif);
 	font-weight: bold;
 	color: #FFFFFF;
 }

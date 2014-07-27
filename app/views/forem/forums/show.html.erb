@@ -1,23 +1,70 @@
-<div class='forum'>
-  <%= render :partial => 'forem/forums/head', :locals => { :forum => @forum } %>
+<!DOCTYPE html lang="en">
+<html>
+  <head>
+    <title>Wendy Walk</title>
+    <!-- Bootstrap -->
+    <link href="../assets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/assets/site.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+      <nav class="navbar-default header" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="/assets/logo.gif" />
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="navbar navbar-nav mainmenu">
+              <li><a  href="http://wendywalk.org/about/">About</a></li>
+              <li><a style="color: #FFFFFF;" href="http://wendywalk.org/press/">Press</a></li>
+              <li><a style="color: #FFFFFF;" href="http://wendywalk.org/stories/">Stories</a></li>
+              <li><a style="color: #FFFFFF;" href="http://wendywalk.org/events/">Events</a></li>
+              <li><a style="color: #FFFFFF;" href="http://wendywalk.org/photos/">Photos</a></li>
+              <li><a style="color: #FFFFFF;" href="http://wendywalk.org/videos/">Videos</a></li>
+              <li><a style="color: #FFFFFF;" class="donate" href="http://wendywalk.org/donate/">DONATE</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class='forum'>
+        <%= render :partial => 'forem/forums/head', :locals => { :forum => @forum } %>
 
-  <%= forem_pages_widget(@topics) %>
-  <table class='topics table-striped table' cellspacing='0'>
-    <thead>
-      <tr>
-        <th class="icon"></th>
-        <th class="byline"><%= t('forem.topic.headings.topic') -%></th>
-        <th class="latest-post text-center"><%= t('forem.topic.headings.latest') -%></th>
-        <th class="posts-count text-center"><%= t('forem.topic.headings.posts') -%></th>
-        <th class="views-count text-center"><%= t('forem.topic.headings.views') -%></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% if @topics.empty? %>
-        <tr><td colspan='5' align='center'><%= t('forem.topic.none') %></td></tr>
-      <% end %>
-      <%= render @topics %>
-    </tbody>
-  </table>
-  <%= forem_pages_widget(@topics) %>
-</div>
+        <%= forem_pages_widget(@topics) %>
+        <table class='topics table-striped table' cellspacing='0'>
+          <thead>
+            <tr>
+              <th class="icon"></th>
+              <th class="byline"><%= t('forem.topic.headings.topic') -%></th>
+              <th class="latest-post text-center"><%= t('forem.topic.headings.latest') -%></th>
+              <th class="posts-count text-center"><%= t('forem.topic.headings.posts') -%></th>
+              <th class="views-count text-center"><%= t('forem.topic.headings.views') -%></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @topics.empty? %>
+              <tr><td colspan='5' align='center'><%= t('forem.topic.none') %></td></tr>
+            <% end %>
+            <%= render @topics %>
+          </tbody>
+        </table>
+        <%= forem_pages_widget(@topics) %>
+      </div>
+      <div class="row footer">
+        <div class="col-md-6">
+          <ul class="socialmenu">
+            <li><a href="https://www.facebook.com/TheWendyWalk"><img src="/assets/facebook.gif" /></a></li>
+            <li><a href="http://flickr.com/"><img src="/assets/flickr.gif" /></a></li>
+            <li><a href="https://twitter.com/TheWendyWalk"><img src="/assets/twitter.gif"></a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <p><img src="/assets/shoe.gif" /> &copy; Copyright 2014 Wendy Walk</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="../assets/bootstrap.min.js"></script>
+</html>

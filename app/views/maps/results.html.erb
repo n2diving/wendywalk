@@ -29,14 +29,16 @@
         </div>
       </div>
     </nav>
+      <div class="jumbotron">
+          <h1>Find a Center</h1>
+          <form>
+          <input type="search" class="location">
+          <button class="find">Find a Clinic</button>
+      </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 map">
-          <h1>Find a center</h1>
-            <form>
-              <input class="location" type="search" name="center" placeholder="California, etc...">
-              <button class="find">Search</button>
-            </form>
+        <div class="col-md-6">RESULTS HERE</div>
+        <div class="col-md-6 map">
           <div id="map-canvas"></div>
         </div>
       </div>
@@ -61,11 +63,6 @@
     <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&sensor=TRUE">
   </script>
-
-        <script>
-
-
-var map;
     <script>
   var cities = {
     '1': [ 32.276813, -110.943381],

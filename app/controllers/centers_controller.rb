@@ -1,0 +1,4 @@
+class CentersController < ApplicationController
+
+
+end

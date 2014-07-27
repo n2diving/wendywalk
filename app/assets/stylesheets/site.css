@@ -101,8 +101,8 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 
 .centerName {
 	font-size: 1.5em;
-	line-height: 3em;
-}
+/*	line-height: 3em;
+*/}
 
 .centerName a {
 	color: #00B3BB;
@@ -115,4 +115,8 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 .columnH2 {
 	font-size: 2em;
 	padding-bottom: 15px;
+}
+
+.centerDivide {
+	padding-bottom: 30px;
 }

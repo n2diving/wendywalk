@@ -3,7 +3,7 @@ class MapsController < ApplicationController
   def home
   end
 
-  def mapresults
+  def results
   end
 
 end

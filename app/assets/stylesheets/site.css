@@ -68,7 +68,9 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 	height: 75px;
 	border: 1px solid #666666;
 	vertical-align: middle;
-	
+	display: inline;
+	color: #999;
+	font-size: .9em;
 }
 
 .footer {
@@ -85,13 +87,32 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 }
 
 .map {
-	width: 1000px;
-	height: 1000px;
-	overflow: visible;
+	width: 50%;
+	height: 500px;
+	padding: 0px;
 }
 
 #map-canvas {
 	overflow: visible;
-	height: 50%; 
-	width: 50%
+	height: 100%; 
+	width: 100%;
+	position: fixed;
+}
+
+.centerName {
+	font-size: 1.5em;
+	line-height: 3em;
+}
+
+.centerName a {
+	color: #00B3BB;
+}
+
+.centerInfo {
+	padding-bottom: 25px;
+}
+
+.columnH2 {
+	font-size: 2em;
+	padding-bottom: 15px;
 }

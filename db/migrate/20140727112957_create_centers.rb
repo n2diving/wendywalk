@@ -6,8 +6,8 @@ class CreateCenters < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :zip
-      t.string :lat
-      t.string :longit
+      t.float :lat
+      t.float :longit
       t.string :url
       t.text :info
       t.string :phone

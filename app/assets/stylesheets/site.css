@@ -1,0 +1,51 @@
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.header {
+	background: #00B3BB;
+	height: 95px;
+	border-bottom: 5px solid #009299;
+	line-height: 85px;
+}
+
+
+.mainmenu  li {
+	display: inline;
+	padding: 0 15px;
+	vertical-align: middle;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.navbar .nav > li > a {
+	line-height: 95px;
+	color: #FFFFFF;
+}
+
+a.donate {
+	height: 50px;
+	width: 120px;
+	padding: 20px 30px;
+	background: #F96D33;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-shadow: 1px 1px rgba(16,9,25,.46);
+}
+
+.footer {
+	height: 100px;
+	line-height: 100px;
+	background: url(../images/footer-bg.gif);
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.socialmenu li {
+	display: inline;
+	vertical-align: middle;
+}

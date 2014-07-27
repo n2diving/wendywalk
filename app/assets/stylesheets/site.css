@@ -1,5 +1,12 @@
+html {
+	height: 100%
+}
+
 body {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	height: 100%;
+	margin: 0;
+	padding: 0 
 }
 
 .header {
@@ -9,9 +16,12 @@ body {
 	line-height: 85px;
 }
 
+.navbar{
+	background: #00B3BB;
+	height: 85px;
+}
 
 .mainmenu  li {
-	display: inline;
 	padding: 0 15px;
 	vertical-align: middle;
 	font-size: 14px;
@@ -19,12 +29,12 @@ body {
 	color: #FFFFFF;
 }
 
-.navbar .nav > li > a {
+.navbar-default .navbar-nav > li > a {
 	line-height: 95px;
 	color: #FFFFFF;
 }
 
-a.donate {
+a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 	height: 50px;
 	width: 120px;
 	padding: 20px 30px;
@@ -35,6 +45,30 @@ a.donate {
 	font-weight: bold;
 	color: #FFFFFF;
 	text-shadow: 1px 1px rgba(16,9,25,.46);
+	text-decoration: none;
+}
+
+.jumbotron {
+	background: url(/assets/jumbo-background.gif);
+}
+
+.find {
+	width: 200px;
+	height: 75px;
+	background: #F96D33;
+	border:none;
+	font-size: 24px;
+	color: #FFFFFF;
+	text-shadow: 1px 1px rgba(16,9,25,.46);
+	vertical-align: middle;
+}
+
+.location {
+	width: 50%;
+	height: 75px;
+	border: 1px solid #666666;
+	vertical-align: middle;
+	
 }
 
 .footer {
@@ -48,24 +82,4 @@ a.donate {
 .socialmenu li {
 	display: inline;
 	vertical-align: middle;
-}
-
-.map {
-	width: 1000px;
-	height: 1000px;
-	overflow: visible;
-}
-
-#map-canvas {
-	overflow: visible;
-	height: 50%; 
-	width: 50%
-}
-
-html {
-	height: 100%
-}
-
-body {
-	height: 100%; margin: 0; padding: 0
 }

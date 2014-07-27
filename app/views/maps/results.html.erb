@@ -61,9 +61,20 @@
     </div>
   </body>
 
-  <% @centers.each do |center| %>
-(<%= center.name %> - <%= center.state %> <%= center.lat%> <%=center.longit%> <%=center.city%>)
-<br>
+<% @center.each do |center| %>      
+  <%= center.name %>
+  <br>
+  <%= center.phone %>
+  <br>
+  <%= center.street%>
+  <br>
+  <%=center.city%>, <%=center.state%> <%=center.zip%>
+  <br>
+  <%=center.info%>
+  <br>
+  <%=center.url%>
+  <br>
+  <%=center.lat%> <%=center.longit%>
 <% end %>
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>

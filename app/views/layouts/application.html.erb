@@ -37,26 +37,13 @@
   <%= content_tag(:div, value, class: "alert alert-#{key}") %>
 <% end %>
  
-<%= link_to 'Home', main_app.root_path %>
-<%= link_to 'Forums', forem.forums_path %>
+
  
-<header style="text-align: center">
-  <nav>
-    <% if user_signed_in? %>
-      <%= link_to current_user.email, main_app.edit_user_registration_path %>
-      | <%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete %>
-      <% if current_user.forem_admin %>
-        | <%= link_to "Administrate", forem.admin_root_url %>
-      <% end %>
-    <% else %>
-      <%= link_to "Sign up", main_app.new_user_registration_path %>
-      | <%= link_to "Sign in", main_app.new_user_session_path %>
-    <% end %>
-  </nav>
-</header>
 
 <%= yield %>
+
     <div class="row footer">
+
         <div class="col-md-6">
           <ul class="socialmenu">
             <li><a href="https://www.facebook.com/TheWendyWalk"><img src="/assets/facebook.gif" /></a></li>
@@ -68,6 +55,17 @@
           <p><img src="/assets/shoe.gif" /> &copy; Copyright 2014 Wendy Walk</p>
         </div>
       </div>
-
+<%= link_to 'Home |', main_app.root_path %>
+<%= link_to 'Forums |', forem.forums_path %>
+<% if user_signed_in? %>
+  <%= link_to current_user.email, main_app.edit_user_registration_path %>
+  | <%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete %>
+  <% if current_user.forem_admin %>
+    | <%= link_to "Administrate", forem.admin_root_url %>
+  <% end %>
+<% else %>
+  <%= link_to "Sign up", main_app.new_user_registration_path %>
+  | <%= link_to "Sign in", main_app.new_user_session_path %>
+<% end %>
 </body>
 </html>

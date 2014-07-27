@@ -6,8 +6,8 @@ one:
   city: MyString
   state: MyString
   zip: MyString
-  lat: MyString
-  longit: MyString
+  lat: 1.5
+  longit: 1.5
   url: MyString
   info: MyText
   phone: MyString
@@ -18,8 +18,8 @@ two:
   city: MyString
   state: MyString
   zip: MyString
-  lat: MyString
-  longit: MyString
+  lat: 1.5
+  longit: 1.5
   url: MyString
   info: MyText
   phone: MyString

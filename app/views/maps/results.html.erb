@@ -14,8 +14,8 @@
           <h1>Find a Center</h1>
               <%= form_tag mapresults_path, :method => 'get' do %>
               <p>
-                <%= text_field_tag :search, params[:search], :class => 'form-control location' %>
-                <%= submit_tag "Search", :state => nil, :class => 'btn btn-default find' %>
+                <%= text_field_tag :search, params[:search], :class => 'form-control location', placeholder: 'Enter city or state...' %>
+                <%= submit_tag "Find a Center", :state => nil, :class => 'btn btn-default find' %>
               </p>
             <% end %>
       </div>

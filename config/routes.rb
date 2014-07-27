@@ -5,9 +5,15 @@ Rails.application.routes.draw do
 
   get '/centers', to: 'maps#home', as: 'centers'
 
-  get '/results', to: 'maps#results', as: 'results'
+  get '/mapresults', to: 'maps#results', as: 'mapresults'
 
   get '/forums', to: 'forums#home', as: 'forums'
+
+  get '/center', to: 'centers#index', as: 'center'
+
+  get '/results', to: 'centers#results', as: 'results'
+
+  get '/search', to: 'centers#search', as: 'search'
 
 end
 

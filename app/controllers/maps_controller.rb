@@ -7,6 +7,7 @@ class MapsController < ApplicationController
   end
 
   def results
+    @center = Center.search(params[:search])
     @centers = Center.all
     @centers.each do |center|
       @lat = (center.lat).to_f

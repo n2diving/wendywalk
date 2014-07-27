@@ -16,3 +16,8 @@
  */
 
 @import 'forem/base';
+
+
+.forempage{
+	background-color: red;
+}

@@ -30,10 +30,10 @@ gem 'devise'
 
 gem 'pg'
 
-gem 'gmaps4rails'
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'forem-redcarpet', github: "radar/forem-redcarpet"
 
-gem 'underscore-rails'
-
+gem 'kaminari', '0.15.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

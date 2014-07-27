@@ -56,7 +56,7 @@
   </script>
     <script>
 
-     var centers = [<% @center.each do |center| %> [<%=center.lat%>, <%=center.longit%>, "<%= center.name %>", "<%=center.url%>", null],
+     var centers = [<% @center.each do |center| %> [<%=center.lat%>, <%=center.longit%>, "<%= center.name %>", "<%=center.url%>"],
         <%end%>];
 
  //  var cities = {
@@ -135,24 +135,20 @@ function initialize() {
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(data[0], data[1]),
           map: map,
-          // content: contentString
-          cityIndex: key,
+          infowindow: new google.maps.InfoWindow({content: data[2]}),
+          url: data[3],
+          clickable: true
         });
 
-        var infowindow = new google.maps.InfoWindow(data[2]);
-
         google.maps.event.addListener(marker, "mouseover", function(e) {
-            infowindow.setContent(data[2]);
-            infowindow.open(map, centers[key][4]);
+            this.infowindow.open(map, this);
           });
         google.maps.event.addListener(marker, "mouseout", function() {
-            infowindow.setContent("");
-            infowindow.close();
+            this.infowindow.close();
           });
         google.maps.event.addListener(marker, "click", function() {
-            location.assign(data[3]);
+            window.open(this.url);
           });
-        data[4] = marker;
       }
 
 

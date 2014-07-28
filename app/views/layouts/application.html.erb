@@ -15,7 +15,7 @@
   <nav class="navbar-default header" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
-        <img src="/assets/logo.gif" />
+        <img src="http://i.imgur.com/W8y0H4g.gif" />
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
         </div>
@@ -28,7 +28,7 @@
             <li><a style="color: #FFFFFF;" href="http://wendywalk.org/photos/">Photos</a></li>
             <li><a style="color: #FFFFFF;" href="http://wendywalk.org/videos/">Videos</a></li>
             <li><a style="color: #FFFFFF;" class="donate" href="http://wendywalk.org/donate/">DONATE</a></li>
-          </ul>
+          </ul> 
           <%= link_to 'Home |', main_app.root_path %>
           <%= link_to 'Forums |', forem.forums_path %>
           <% if user_signed_in? %>
@@ -48,9 +48,9 @@
     <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
     <% end %>
-    
 
-    
+
+
 
     <%= yield %>
 
@@ -58,13 +58,13 @@
 
       <div class="col-md-6">
         <ul class="socialmenu">
-          <li><a href="https://www.facebook.com/TheWendyWalk"><img src="/assets/facebook.gif" /></a></li>
-          <li><a href="http://flickr.com/"><img src="/assets/flickr.gif" /></a></li>
-          <li><a href="https://twitter.com/TheWendyWalk"><img src="/assets/twitter.gif"></a></li>
+          <li><a href="https://www.facebook.com/TheWendyWalk"><img src="http://i.imgur.com/p3rgjSu.gif" /></a></li>
+          <li><a href="http://flickr.com/"><img src="http://i.imgur.com/sWn5B1y.gif" /></a></li>
+          <li><a href="https://twitter.com/TheWendyWalk"><img src="http://i.imgur.com/niZ4P8E.gif"></a></li>
         </ul>
       </div>
       <div class="col-md-6">
-        <p><img src="/assets/shoe.gif" /> &copy; Copyright 2014 Wendy Walk</p>
+        <p><img src="http://i.imgur.com/YWxDzD3.gif" /> &copy; Copyright 2014 Wendy Walk</p>
       </div>
     </div>
 

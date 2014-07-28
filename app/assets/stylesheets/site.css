@@ -50,7 +50,7 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 }
 
 .jumbotron {
-	background: url(/assets/jumbo-background.gif);
+	background: url(http://i.imgur.com/bn9fpq7.gif);
 }
 
 .find {
@@ -77,7 +77,7 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 .footer {
 	height: 100px;
 	line-height: 100px;
-	background: url(/assets/footer-bg.gif);
+	background: url(http://i.imgur.com/jF7xiIL.gif);
 	font-weight: bold;
 	color: #FFFFFF;
 }

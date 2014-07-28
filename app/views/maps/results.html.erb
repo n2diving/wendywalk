@@ -3,8 +3,6 @@
 <head>
   <title>Wendy Walk</title>
   <!-- Bootstrap -->
-  <link href="../assets/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="/assets/site.css" rel="stylesheet" media="screen">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 </head>
@@ -49,14 +47,13 @@
   </body>
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="../assets/bootstrap.min.js"></script>
 
     <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&sensor=TRUE">
   </script>
     <script>
 
-     var centers = [<% @center.each do |center| %> [<%=center.lat%>, <%=center.longit%>, "<%= center.name %>", "<%=center.url%>", null],
+     var centers = [<% @center.each do |center| %> [<%=center.lat%>, <%=center.longit%>, "<%= center.name %>", "<%=center.url%>"],
         <%end%>];
 
  //  var cities = {
@@ -107,7 +104,7 @@
  // };
 function initialize() {
   var mapOptions = {
-    zoom: 8
+    zoom: 9
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -135,24 +132,20 @@ function initialize() {
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(data[0], data[1]),
           map: map,
-          // content: contentString
-          cityIndex: key,
+          infowindow: new google.maps.InfoWindow({content: data[2]}),
+          url: data[3],
+          clickable: true
         });
 
-        var infowindow = new google.maps.InfoWindow(data[2]);
-
         google.maps.event.addListener(marker, "mouseover", function(e) {
-            infowindow.setContent(data[2]);
-            infowindow.open(map, centers[key][4]);
+            this.infowindow.open(map, this);
           });
         google.maps.event.addListener(marker, "mouseout", function() {
-            infowindow.setContent("");
-            infowindow.close();
+            this.infowindow.close();
           });
         google.maps.event.addListener(marker, "click", function() {
-            location.assign(data[3]);
+            window.open(this.url);
           });
-        data[4] = marker;
       }
 
 

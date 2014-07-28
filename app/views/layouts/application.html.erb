@@ -12,23 +12,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <nav class="navbar-default header" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <img src="/assets/logo.gif" />
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
+  <nav class="navbar-default" role="navigation">
+        <div class="container-fluid header">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="http://wendywalk.org"><img src="assets/logo.gif" /></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="navbar navbar-nav mainmenu">
+              <li class="dropown"><a href="#" style="color: #FFFFFF;" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="http://wendywalk.org/about/">About Wendy Walk</a></li>
+                  <li><a href="http://wendywalk.org/press/">Press</a></li>
+                  <li><a href="http://wendywalk.org/stories/">Stories</a></li>
+                </ul>
+              </li>
+              <li class="dropown"><a href="#" style="color: #FFFFFF;" class="dropdown-toggle" data-toggle="dropdown">Media<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a style="color: #FFFFFF;" href="http://wendywalk.org/photos/">Photos</a></li>
+                  <li><a style="color: #FFFFFF;" href="http://wendywalk.org/videos/">Videos</a></li>
+                </ul>
+              </li>
+              <li><a style="color: #FFFFFF;" href="http://wendywalk.org/events/">Events</a></li>
+              <li><a style="color: #FFFFFF;" class="donate" href="http://wendywalk.org/donate/">DONATE</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="navbar navbar-nav mainmenu">
-            <li><a  href="http://wendywalk.org/about/">About</a></li>
-            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/press/">Press</a></li>
-            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/stories/">Stories</a></li>
-            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/events/">Events</a></li>
-            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/photos/">Photos</a></li>
-            <li><a style="color: #FFFFFF;" href="http://wendywalk.org/videos/">Videos</a></li>
-            <li><a style="color: #FFFFFF;" class="donate" href="http://wendywalk.org/donate/">DONATE</a></li>
-          </ul>
+      </nav>
           <%= link_to 'Home |', main_app.root_path %>
           <%= link_to 'Forums |', forem.forums_path %>
           <% if user_signed_in? %>
@@ -41,9 +56,6 @@
           <%= link_to "Sign up", main_app.new_user_registration_path %>
           | <%= link_to "Sign in", main_app.new_user_session_path %>
           <% end %>
-        </div>
-      </div>
-    </nav>
 
     <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>

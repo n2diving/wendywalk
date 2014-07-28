@@ -1,3 +1,4 @@
+=======
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -23,6 +24,7 @@
 	background-color: red;
 }
 
+
 html {
 	height: 100%
 }
@@ -36,14 +38,17 @@ body {
 
 .header {
 	background: #00B3BB;
-	height: 95px;
+	height: 105px;
 	border-bottom: 5px solid #009299;
-	line-height: 85px;
+	line-height: 95px;
 }
 
 .navbar{
 	background: #00B3BB;
-	height: 85px;
+}
+
+.navbar-nav li a {
+ line-height: 95px;
 }
 
 .mainmenu  li {
@@ -56,7 +61,6 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a {
-	line-height: 95px;
 	color: #FFFFFF;
 }
 
@@ -99,10 +103,14 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 	font-size: .9em;
 }
 
+.navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #00B3BB;
+    color:#ffffff;
+  }
+
 .footer {
-	height: 100px;
-	line-height: 100px;
-	background: url(/assets/footer-bg.gif);
+	background: #01797f;
+	border-top: 15px solid #00B3BB;
 	font-weight: bold;
 	color: #FFFFFF;
 }
@@ -127,8 +135,7 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 
 .centerName {
 	font-size: 1.5em;
-/*	line-height: 3em;
-*/}
+}
 
 .centerName a {
 	color: #00B3BB;
@@ -142,4 +149,3 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 	font-size: 2em;
 	padding-bottom: 15px;
 }
-

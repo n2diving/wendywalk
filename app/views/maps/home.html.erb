@@ -1,23 +1,29 @@
 <!DOCTYPE html lang="en">
 <html>
-  <head>
-    <title>Wendy Walk</title>
-    <!-- Bootstrap -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-        <div class="jumbotron">
-          <h1>Find a Center</h1>
-          <%= form_tag mapresults_path, :method => 'get', :class => 'hidden-xs' do %>
-              <p>
-                <%= text_field_tag :search, params[:search], :class => 'form-control location', placeholder: 'Enter city or state...' %>
-                <%= submit_tag "Find a Clinic", :state => nil, :class => 'btn btn-default find' %>
-              </p>
-            <% end %>
-      </div>
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-9"></div>
+<head>
+  <title>Wendy Walk</title>
+  <!-- Bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+      <div class="jumbotron">
+        <h1>Find a Center</h1>
+        <%= form_tag mapresults_path, :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search], :class => 'form-control location hidden-sm hidden-xs', placeholder: 'Enter city or state...' %>
+              <%= submit_tag "Find a Clinic", :state => nil, :class => 'btn btn-default find hidden-sm hidden-xs' %>
+            </p>
+            <p>
+              <%= text_field_tag :search, params[:search], :class => 'form-control location-sm hidden-md hidden-lg', placeholder: 'Enter city or state...' %>
+              <%= submit_tag "Find a Clinic", :state => nil, :class => 'btn btn-default find-sm hidden-md hidden-lg' %>
+            </p>
+          <% end %>
+    </div>
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-11">
         <h3>What is Liposarcoma?</h3>
         <p>Liposarcoma is a rare cancer of connective tissues that resemble fat cells under a microscope. It accounts for up to 18% of all soft tissue sarcomas. Liposarcoma can occur in almost any part of the body, but more than half of liposarcoma cases involve the thigh, and up to a third involve the abdominal cavity.</p>
         <p>Liposarcoma tends to affects adults between the ages of 40 and 60. When it does occur in children, it is usually during the teenage years.</p>
@@ -26,10 +32,7 @@
         <p>The combination of surgery and radiation therapy has been shown to prevent recurrence at the surgical site in about 85-90% of liposarcoma cases. These results vary depending on the subtype of sarcoma that is involved. Radiation therapy may be used before, during or after surgery to kill tumor cells and reduce the chance of the tumor returning in the same location. Radiation therapy that is given before surgery may be more beneficial, but it can also make it more difficult for surgical wounds to heal.</p>
         <p>The role of chemotherapy in the treatment of liposarcoma is not clearly defined, but it may be recommended in certain situations where patients are at high risk of recurrence or already have widespread disease.</p>
       </div>
-      <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-        </div>
-</body>
+    </div>
+  </body>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 </html>

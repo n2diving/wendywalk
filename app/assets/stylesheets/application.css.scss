@@ -78,7 +78,7 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 }
 
 .jumbotron {
-	background: url(/assets/jumbo-background.gif);
+	background: url(http://i.imgur.com/bn9fpq7.gif);
 }
 
 .find {
@@ -108,12 +108,12 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
   }
 
 .footer {
-	background: #01797f;
-	border-top: 15px solid #00B3BB;
+	height: 100px;
+	line-height: 100px;
+	background: url(http://i.imgur.com/jF7xiIL.gif);
 	font-weight: bold;
 	color: #FFFFFF;
 }
-
 .socialmenu li {
 	display: inline;
 	vertical-align: middle;
@@ -172,6 +172,5 @@ a.donate, .navbar-default .navbar-nav > li > a.donate:hover {
 
 .forum-nav {
 	padding-top: 5px;
-	margin-bottom: 5px;
-	
+	margin-bottom: 5px;	
 }
